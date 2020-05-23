@@ -12,3 +12,8 @@ output "vpc_display_text" {
   description = "The CIDR block of the VPC"
   value       = concat(cloudstack_vpc.this.*.display_text, [""])[0]
 }
+
+output "network_id" {
+  description = "The IDs of the networks in the VPC"
+  value       = concat(cloudstack_network.priavte.*.id, [""])[0]
+}

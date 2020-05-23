@@ -67,6 +67,7 @@ module "vpc" {
 
 | Name | Description |
 |------|-------------|
+| network\_id | The IDs of the networks in the VPC |
 | vpc\_display\_text | The CIDR block of the VPC |
 | vpc\_id | The ID of the VPC |
 | vpc\_source\_nat\_ip | The CIDR block of the VPC |
