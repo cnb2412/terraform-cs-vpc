@@ -62,8 +62,8 @@ variable "subnet_names" {
 
 variable "default_network_offering" {
   description = "Network offering that should be used, if not list is specified"
-  type = string
-  default = ""
+  type        = string
+  default     = ""
 }
 
 variable "subnet_offerings" {

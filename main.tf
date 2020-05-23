@@ -11,12 +11,12 @@ terraform {
 #### VPC
 
 resource "cloudstack_vpc" "this" {
-  name         = var.name
-  cidr         = var.cidr
-  vpc_offering = var.vpc_offering
-  zone         = var.zone
+  name           = var.name
+  cidr           = var.cidr
+  vpc_offering   = var.vpc_offering
+  zone           = var.zone
   network_domain = var.network_domain
-  project      = var.project
+  project        = var.project
 
   tags = merge(
     {
@@ -35,7 +35,7 @@ resource "cloudstack_network" "priavte" {
   name             = var.subnet_names[count.index]
   display_text     = var.subnet_names[count.index]
   cidr             = var.subnets[count.index]
-  network_offering = length(var.subnet_offerings) == length(var.subnets) ? var.subnet_offerings[count.index] :var.default_network_offering
+  network_offering = length(var.subnet_offerings) == length(var.subnets) ? var.subnet_offerings[count.index] : var.default_network_offering
   zone             = var.zone
   vpc_id           = cloudstack_vpc.this.id
   project          = var.project
