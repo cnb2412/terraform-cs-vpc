@@ -52,8 +52,10 @@ module "vpc" {
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | cidr | The CIDR block for the VPC. Default value is a valid CIDR, but not acceptable by CS and should be overridden | `string` | `"0.0.0.0/0"` | no |
+| default\_network\_acl\_id | Network ACL id that should be used, if not list is specified | `string` | `""` | no |
 | default\_network\_offering | Network offering that should be used, if not list is specified | `string` | `""` | no |
 | name | Name to be used on all resources as prefix | `string` | n/a | yes |
+| network\_acl\_ids | A list of network ACL ids. | `list(string)` | `[]` | no |
 | network\_domain | The default DNS domain for networks created in this VPC. Changing this forces a new resource to be created. | `string` | `""` | no |
 | project | The name or ID of the project to deploy this instance to. Changing this forces a new resource to be created. | `string` | `""` | no |
 | subnet\_names | A list of subnets/tiers names | `list(string)` | `[]` | no |
