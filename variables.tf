@@ -71,3 +71,16 @@ variable "subnet_offerings" {
   type        = list(string)
   default     = []
 }
+
+variable "network_acl_ids" {
+  type = list(string)
+  description = "A list of network ACL ids."
+  default = []
+}
+
+variable "default_network_acl_id" {
+  description = "Network ACL id that should be used, if not list is specified"
+  type        = string
+  default     = ""  
+}
+

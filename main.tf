@@ -38,6 +38,7 @@ resource "cloudstack_network" "priavte" {
   network_offering = length(var.subnet_offerings) == length(var.subnets) ? var.subnet_offerings[count.index] : var.default_network_offering
   zone             = var.zone
   vpc_id           = cloudstack_vpc.this.id
+  acl_id           = length(var.network_acl_ids) == length(var.subnets) ? var.network_acl_ids[count.index] : var.default_network_acl_id
   project          = var.project
 
 }
