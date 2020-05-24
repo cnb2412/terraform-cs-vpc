@@ -15,5 +15,5 @@ output "vpc_display_text" {
 
 output "network_id" {
   description = "The IDs of the networks in the VPC"
-  value       = concat(cloudstack_network.priavte.*.id, [""])[0]
+  value       = concat(cloudstack_network.priavte.*.id, [""])
 }
