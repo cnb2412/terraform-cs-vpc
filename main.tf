@@ -29,7 +29,7 @@ resource "cloudstack_vpc" "this" {
 
 #### networks
 
-resource "cloudstack_network" "priavte" {
+resource "cloudstack_network" "private" {
   count = length(var.subnets) > 0 ? length(var.subnets) : 0
 
   name             = var.subnet_names[count.index]
